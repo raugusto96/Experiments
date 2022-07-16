@@ -1,32 +1,35 @@
-import React from 'react'
+import React from 'react';
 import propTypes from 'prop-types';
 
-const Card = ({ title, image, category }) => {
+const Certificate = ({ title, subtitle, issueDate, image }) => {
   return (
     <div>
       <h2>{ title }</h2>
-      <span>{ category }</span>
+      <h3>{ subtitle }</h3>
+      <h5>{ issueDate }</h5>
       <img src={ image.url } alt={ image.alt } />
     </div>
   )
 };
 
-Card.propTypes = {
+Certificate.propTypes = {
   title: propTypes.string,
+  subtitle: propTypes.string,
+  issueDate: propTypes.string,
   image: propTypes.shape({
     url: propTypes.string,
     alt: propTypes.string,
   }),
-  category: propTypes.string,
 };
 
-Card.defaultProps = {
+Certificate.defaultProps = {
   title: '',
-  category: '',
+  subtitle: '',
+  issueDate: '',
   image: {
     url: '',
     alt: '',
   },
 };
 
-export default Card;
+export default Certificate;
